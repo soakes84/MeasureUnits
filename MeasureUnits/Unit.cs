@@ -11,6 +11,12 @@ namespace MeasureUnits
         private string _uom;
         private string _type;
 
+        public Unit(string unt, string typ)
+        {
+            _uom = unt;
+            _type = typ;
+        }
+
         public string UOM
         {
             get { return _uom; }
