@@ -144,7 +144,35 @@ namespace MeasureUnits
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            fromTextBox.Text = "1";
+            errorLabel.Text = "";
 
+            toTextBox.ReadOnly = true;
+
+            fromTextBox.KeyPress += new KeyPressEventHandler(OnlyNumberWithSinglePointInTextBox);
+
+            convertButton.Click += new EventHandler(convertButton_Click);
+        }
+
+        #endregion
+
+        #region text box events
+
+        private void OnlyNumberWithSinglePointInTextBox(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
+        #region convert button click
+
+        private void convertButton_Click(object sender, EventArgs e)
+        {
+            errorLabel.Text = "convert clicked";
         }
 
         #endregion

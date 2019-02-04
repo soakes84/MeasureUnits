@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.fromTextBox = new System.Windows.Forms.TextBox();
-            this.toTextBox = new System.Windows.Forms.TextBox();
             this.fromComboBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.toTextBox = new System.Windows.Forms.TextBox();
             this.toComboBox = new System.Windows.Forms.ComboBox();
             this.toLabel = new System.Windows.Forms.Label();
             this.convertButton = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.errorLabel, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.toLabel, 0, 2);
@@ -62,6 +64,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(761, 268);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(3, 220);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(755, 48);
+            this.errorLabel.TabIndex = 4;
+            this.errorLabel.Text = "Error Message";
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -81,6 +96,26 @@
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // fromTextBox
+            // 
+            this.fromTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fromTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromTextBox.Location = new System.Drawing.Point(191, 3);
+            this.fromTextBox.Name = "fromTextBox";
+            this.fromTextBox.Size = new System.Drawing.Size(182, 29);
+            this.fromTextBox.TabIndex = 0;
+            this.fromTextBox.Text = "From Value";
+            // 
+            // fromComboBox
+            // 
+            this.fromComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fromComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromComboBox.FormattingEnabled = true;
+            this.fromComboBox.Location = new System.Drawing.Point(379, 3);
+            this.fromComboBox.Name = "fromComboBox";
+            this.fromComboBox.Size = new System.Drawing.Size(182, 32);
+            this.fromComboBox.TabIndex = 1;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -98,16 +133,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(755, 38);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // fromTextBox
-            // 
-            this.fromTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fromTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromTextBox.Location = new System.Drawing.Point(191, 3);
-            this.fromTextBox.Name = "fromTextBox";
-            this.fromTextBox.Size = new System.Drawing.Size(182, 29);
-            this.fromTextBox.TabIndex = 0;
-            this.fromTextBox.Text = "From Value";
-            // 
             // toTextBox
             // 
             this.toTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,16 +142,6 @@
             this.toTextBox.Size = new System.Drawing.Size(182, 29);
             this.toTextBox.TabIndex = 0;
             this.toTextBox.Text = "To Value";
-            // 
-            // fromComboBox
-            // 
-            this.fromComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fromComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromComboBox.FormattingEnabled = true;
-            this.fromComboBox.Location = new System.Drawing.Point(379, 3);
-            this.fromComboBox.Name = "fromComboBox";
-            this.fromComboBox.Size = new System.Drawing.Size(182, 32);
-            this.fromComboBox.TabIndex = 1;
             // 
             // toComboBox
             // 
@@ -191,6 +206,7 @@
         private System.Windows.Forms.ComboBox toComboBox;
         private System.Windows.Forms.Label toLabel;
         private System.Windows.Forms.Button convertButton;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
