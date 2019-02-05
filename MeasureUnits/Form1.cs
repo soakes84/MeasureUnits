@@ -164,6 +164,13 @@ namespace MeasureUnits
             {
                 e.Handled = true;
             }
+
+            TextBox txtDecimal = sender as TextBox;
+
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
         #endregion
