@@ -135,6 +135,15 @@ namespace MeasureUnits
 
         #endregion
 
+        #region variables
+
+        List<Unit> lenghtList = new List<Unit>();
+        List<Unit> areaList = new List<Unit>();
+        List<Unit> weightList = new List<Unit>();
+        List<Unit> volumeList = new List<Unit>();
+        List<Unit> timeList = new List<Unit>();
+        #endregion
+
         #region init & load
 
         public Form1()
@@ -149,9 +158,38 @@ namespace MeasureUnits
 
             toTextBox.ReadOnly = true;
 
+            LoadUOMLists();
+
             fromTextBox.KeyPress += new KeyPressEventHandler(OnlyNumberWithSinglePointInTextBox);
 
             convertButton.Click += new EventHandler(convertButton_Click);
+        }
+
+        #endregion
+
+        #region Load Lists
+
+        private void LoadUOMLists()
+        {
+            foreach(Unit u in UOMList)
+            {
+                switch(u.Type)
+                {
+                    case "L": lenghtList.Add(new Unit (u.UOM, u.Type));
+                        break;
+                    case "A": areaList.Add(new Unit(u.UOM, u.Type));
+                        break;
+                    case "W": weightList.Add(new Unit(u.UOM, u.Type));
+                        break;
+                    case "V": volumeList.Add(new Unit(u.UOM, u.Type));
+                        break;
+                    case "T": timeList.Add(new Unit(u.UOM, u.Type));
+                        break;
+                    default:
+                        break;
+
+                }
+            }
         }
 
         #endregion
