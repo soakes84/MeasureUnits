@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.errorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,9 +39,13 @@
             this.toComboBox = new System.Windows.Forms.ComboBox();
             this.toLabel = new System.Windows.Forms.Label();
             this.convertButton = new System.Windows.Forms.Button();
+            this.fromBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -191,6 +196,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,6 +214,8 @@
         private System.Windows.Forms.Label toLabel;
         private System.Windows.Forms.Button convertButton;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.BindingSource fromBindingSource;
+        private System.Windows.Forms.BindingSource toBindingSource;
     }
 }
 

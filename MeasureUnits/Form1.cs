@@ -137,7 +137,7 @@ namespace MeasureUnits
 
         #region variables
 
-        List<Unit> lenghtList = new List<Unit>();
+        List<Unit> lengthList = new List<Unit>();
         List<Unit> areaList = new List<Unit>();
         List<Unit> weightList = new List<Unit>();
         List<Unit> volumeList = new List<Unit>();
@@ -154,11 +154,18 @@ namespace MeasureUnits
         private void Form1_Load(object sender, EventArgs e)
         {
             fromTextBox.Text = "1";
+            toTextBox.Text = "";
             errorLabel.Text = "";
+
 
             toTextBox.ReadOnly = true;
 
             LoadUOMLists();
+            LoadFromComboBox();
+            LoadLengthComboBox();
+
+            fromComboBox.SelectedIndex = 1;
+            toComboBox.SelectedIndex = 1;
 
             fromTextBox.KeyPress += new KeyPressEventHandler(OnlyNumberWithSinglePointInTextBox);
 
@@ -175,7 +182,7 @@ namespace MeasureUnits
             {
                 switch(u.Type)
                 {
-                    case "L": lenghtList.Add(new Unit (u.UOM, u.Type));
+                    case "L": lengthList.Add(new Unit (u.UOM, u.Type));
                         break;
                     case "A": areaList.Add(new Unit(u.UOM, u.Type));
                         break;
@@ -190,6 +197,52 @@ namespace MeasureUnits
 
                 }
             }
+        }
+
+        #endregion
+
+        #region load combo boxes
+
+        private void LoadFromComboBox()
+        {
+            fromBindingSource.DataSource = UOMList;
+            fromComboBox.DataSource = fromBindingSource.DataSource;
+            fromComboBox.DisplayMember = "UOM";
+        }
+
+        private void LoadLengthComboBox()
+        {
+            toBindingSource.DataSource = lengthList;
+            toComboBox.DataSource = toBindingSource.DataSource;
+            toComboBox.DisplayMember = "UOM";
+        }
+
+        private void LoadAreaComboBox()
+        {
+            toBindingSource.DataSource = areaList;
+            toComboBox.DataSource = toBindingSource.DataSource;
+            toComboBox.DisplayMember = "UOM";
+        }
+
+        private void LoadWeightComboBox()
+        {
+            toBindingSource.DataSource = weightList;
+            toComboBox.DataSource = toBindingSource.DataSource;
+            toComboBox.DisplayMember = "UOM";
+        }
+
+        private void LoadVolumeComboBox()
+        {
+            toBindingSource.DataSource = volumeList;
+            toComboBox.DataSource = toBindingSource.DataSource;
+            toComboBox.DisplayMember = "UOM";
+        }
+
+        private void LoadTimeComboBox()
+        {
+            toBindingSource.DataSource = timeList;
+            toComboBox.DataSource = toBindingSource.DataSource;
+            toComboBox.DisplayMember = "UOM";
         }
 
         #endregion
