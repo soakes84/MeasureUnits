@@ -170,6 +170,8 @@ namespace MeasureUnits
             fromTextBox.KeyPress += new KeyPressEventHandler(OnlyNumberWithSinglePointInTextBox);
 
             convertButton.Click += new EventHandler(convertButton_Click);
+
+            fromComboBox.SelectedIndexChanged += new EventHandler(fromComboBox_SelectedIndexChanged);
         }
 
         #endregion
@@ -264,6 +266,37 @@ namespace MeasureUnits
             }
         }
 
+        #endregion
+
+        #region comboBox events
+
+        private void fromComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Unit unit = UOMList[fromComboBox.SelectedIndex];
+
+            switch (unit.Type)
+            {
+                case "L":
+                    LoadLengthComboBox();
+                    break;
+                case "A":
+                    LoadAreaComboBox();
+                    break;
+                case "W":
+                    LoadWeightComboBox();
+                    break;
+                case "V":
+                    LoadVolumeComboBox();
+                    break;
+                case "T":
+                    LoadTimeComboBox();
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        
         #endregion
 
         #region convert button click
