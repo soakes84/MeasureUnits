@@ -142,6 +142,9 @@ namespace MeasureUnits
         List<Unit> weightList = new List<Unit>();
         List<Unit> volumeList = new List<Unit>();
         List<Unit> timeList = new List<Unit>();
+
+        int fromIndex = 0;
+
         #endregion
 
         #region init & load
@@ -304,6 +307,39 @@ namespace MeasureUnits
         private void convertButton_Click(object sender, EventArgs e)
         {
             errorLabel.Text = "convert clicked";
+        }
+
+        #endregion
+
+        #region do conversion
+
+        private void doConversion(List<Unit> conversionList, double[,] conversionMatrix)
+        {
+            int toIndex = toComboBox.SelectedIndex;
+            int i = 0;
+
+            if ((fromComboBox.SelectedIndex > -1) && (toComboBox.SelectedIndex > -1))
+            {
+                Unit fromUOM = UOMList[fromComboBox.SelectedIndex];
+
+                foreach(Unit toUOM in conversionList)
+                {
+                    if (toUOM.UOM.Equals(fromUOM.UOM)) fromIndex = i;
+                    i++;
+                }
+
+                double fromNumber = 0;
+
+                if (Double.TryParse(fromTextBox.Text, out fromNumber))
+                {
+                    toLabel.Text = "";
+
+                }
+                else
+                {
+                    errorLabel.Text = "Invalid Number Entered";
+                }
+            }
         }
 
         #endregion
