@@ -306,7 +306,29 @@ namespace MeasureUnits
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            errorLabel.Text = "convert clicked";
+            Unit unit = UOMList[fromComboBox.SelectedIndex];
+
+            switch (unit.Type)
+            {
+                case "L":
+                    doConversion(lengthList, lengthMatrix);
+                    break;
+                case "A":
+                    doConversion(areaList, areaMatrix);
+                    break;
+                case "W":
+                    doConversion(weightList, weightMatrix);
+                    break;
+                case "V":
+                    doConversion(volumeList, volumeMatrix);
+                    break;
+                case "T":
+                    doConversion(timeList, timeMatrix);
+                    break;
+                default:
+                    break;
+
+            } 
         }
 
         #endregion
@@ -332,8 +354,7 @@ namespace MeasureUnits
 
                 if (Double.TryParse(fromTextBox.Text, out fromNumber))
                 {
-                    toLabel.Text = "";
-
+                    toTextBox.Text = (fromNumber * conversionMatrix[fromIndex, toIndex]).ToString();
                 }
                 else
                 {
@@ -345,6 +366,11 @@ namespace MeasureUnits
         #endregion
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

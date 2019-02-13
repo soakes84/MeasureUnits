@@ -157,6 +157,7 @@
             this.toComboBox.Name = "toComboBox";
             this.toComboBox.Size = new System.Drawing.Size(182, 32);
             this.toComboBox.TabIndex = 1;
+            this.toComboBox.SelectedIndexChanged += new System.EventHandler(this.toComboBox_SelectedIndexChanged);
             // 
             // toLabel
             // 
