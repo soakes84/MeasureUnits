@@ -50,6 +50,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.errorLabel, 0, 5);
@@ -85,6 +86,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -173,6 +175,7 @@
             // 
             // convertButton
             // 
+            this.convertButton.BackColor = System.Drawing.Color.SlateGray;
             this.convertButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.convertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.convertButton.Location = new System.Drawing.Point(3, 179);
@@ -180,7 +183,7 @@
             this.convertButton.Size = new System.Drawing.Size(755, 38);
             this.convertButton.TabIndex = 3;
             this.convertButton.Text = "Convert";
-            this.convertButton.UseVisualStyleBackColor = true;
+            this.convertButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

@@ -160,7 +160,6 @@ namespace MeasureUnits
             toTextBox.Text = "";
             errorLabel.Text = "";
 
-
             toTextBox.ReadOnly = true;
 
             LoadUOMLists();
@@ -183,19 +182,24 @@ namespace MeasureUnits
 
         private void LoadUOMLists()
         {
-            foreach(Unit u in UOMList)
+            foreach (Unit u in UOMList)
             {
-                switch(u.Type)
+                switch (u.Type)
                 {
-                    case "L": lengthList.Add(new Unit (u.UOM, u.Type));
+                    case "L":
+                        lengthList.Add(new Unit(u.UOM, u.Type));
                         break;
-                    case "A": areaList.Add(new Unit(u.UOM, u.Type));
+                    case "A":
+                        areaList.Add(new Unit(u.UOM, u.Type));
                         break;
-                    case "W": weightList.Add(new Unit(u.UOM, u.Type));
+                    case "W":
+                        weightList.Add(new Unit(u.UOM, u.Type));
                         break;
-                    case "V": volumeList.Add(new Unit(u.UOM, u.Type));
+                    case "V":
+                        volumeList.Add(new Unit(u.UOM, u.Type));
                         break;
-                    case "T": timeList.Add(new Unit(u.UOM, u.Type));
+                    case "T":
+                        timeList.Add(new Unit(u.UOM, u.Type));
                         break;
                     default:
                         break;
@@ -299,7 +303,7 @@ namespace MeasureUnits
 
             }
         }
-        
+
         #endregion
 
         #region convert button click
@@ -327,8 +331,7 @@ namespace MeasureUnits
                     break;
                 default:
                     break;
-
-            } 
+            }
         }
 
         #endregion
@@ -344,7 +347,7 @@ namespace MeasureUnits
             {
                 Unit fromUOM = UOMList[fromComboBox.SelectedIndex];
 
-                foreach(Unit toUOM in conversionList)
+                foreach (Unit toUOM in conversionList)
                 {
                     if (toUOM.UOM.Equals(fromUOM.UOM)) fromIndex = i;
                     i++;
