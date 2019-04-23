@@ -41,6 +41,7 @@
             this.convertButton = new System.Windows.Forms.Button();
             this.fromBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -58,6 +59,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.toLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.convertButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -185,6 +187,20 @@
             this.convertButton.Text = "Convert";
             this.convertButton.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(196, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(368, 31);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "Conversions Made Easy";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +238,7 @@
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.BindingSource fromBindingSource;
         private System.Windows.Forms.BindingSource toBindingSource;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
